@@ -43,18 +43,6 @@ const Menu = () => {
               Lista de criptomonedas
             </NavLink>
           </li>
-          <li className="menu-item">
-            <button
-              className="menu-link logout-button"
-              onClick={() => {
-                localStorage.removeItem("token");
-                setIsMenuOpen(false); // Cerrar el menú
-                navigate("/login");
-              }}
-            >
-              Cerrar sesión
-            </button>
-          </li>
         </ul>
       </nav>
     </header>

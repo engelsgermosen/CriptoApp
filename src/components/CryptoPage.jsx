@@ -1,4 +1,3 @@
-
 import LoadingCircle from './LoadingCircle';
 import { useParams } from 'react-router';
 import '../styles/CryptoPages.css';
@@ -7,13 +6,8 @@ import usePetition from '../hooks/usePetition';
 const CryptoPage = () => {
 
   const { id } = useParams();
-
-
-
   const data = usePetition(`https://api.coincap.io/v2/assets/${id}`);
   const history = usePetition(`https://api.coincap.io/v2/assets/${id}/history?interval=d1`);
-
-
 
   if (!data || !history) return <LoadingCircle />;
 
