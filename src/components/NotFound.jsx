@@ -1,6 +1,6 @@
-import '../styles/_404.css'
+import '../styles/NotFound.css'
 
-const _404 = () => {
+const NotFound = () => {
     return (
         <div className="container-404">
             <h1>Pagina no encontrada</h1>
@@ -9,4 +9,4 @@ const _404 = () => {
     )
 }
 
-export default _404
+export default NotFound

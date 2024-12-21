@@ -2,7 +2,7 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './components/App.jsx'
 import { BrowserRouter, Route, Routes } from 'react-router'
-import _404 from './components/_404.jsx'
+import NotFound from './components/NotFound.jsx'
 import Cuadricula from './components/Cuadricula.jsx'
 import Home from './components/Home.jsx'
 import CryptoPage from './components/CryptoPage.jsx'
@@ -19,7 +19,7 @@ createRoot(document.getElementById('root')).render(
         <Route path=':id' element={<CryptoPage />} />
       </Route>
       <Route path='/login' element={<Login />} />
-      <Route path='*' element={<_404 />} />
+      <Route path='*' element={<NotFound />} />
     </Routes>
   </BrowserRouter>
 )
