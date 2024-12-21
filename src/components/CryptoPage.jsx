@@ -8,8 +8,11 @@ const CryptoPage = () => {
 
   const { id } = useParams();
 
+
+
   const data = usePetition(`https://api.coincap.io/v2/assets/${id}`);
   const history = usePetition(`https://api.coincap.io/v2/assets/${id}/history?interval=d1`);
+
 
 
   if (!data || !history) return <LoadingCircle />;
@@ -25,13 +28,13 @@ const CryptoPage = () => {
             Name: <span className='infro-datos'>{data.name}</span>
           </p>
           <p className='label-datos'>
-            Supply: <span className='infro-datos'>{data.symbol}</span>
+            Symbol: <span className='infro-datos'>{data.symbol}</span>
           </p>
           <p className='label-datos'>
             Supply: <span className='infro-datos'>{parseFloat(data.supply).toFixed(3)}</span>
           </p>
           <p className='label-datos'>
-            MaxSupply: <span className='infro-datos'>{parseFloat(data.maxSupply).toFixed(3)}</span>
+            MaxSupply: <span className='infro-datos'>{isNaN(parseFloat(data.maxSupply).toFixed(3)) ? "Unknown" : parseFloat(data.maxSupply).toFixed(3)}</span>
           </p>
           <p className='label-datos'>
             MarketCapUsd: <span className='infro-datos'>{parseFloat(data.marketCapUsd).toFixed(3)}</span>

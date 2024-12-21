@@ -7,7 +7,9 @@ const usePetition = (url) =>{
     useEffect(() => {
         fetch(`${url}`)
           .then(res => res.json())
-          .then(data => setData(data.data))
+          .then(data => {setData(data.data)
+            console.log(data.data)
+          })
           .catch(error => console.error(error))
       }, [])
 
